@@ -8,7 +8,8 @@ Thus you would do the following to define the resource in the ARM template:<br>
 "name": "parentname/childname1/childnameN"<br>
 "type": "parenttype/childtype1/childtypeN"<br>
 <br><br>
-For example, the URI format for a host key is:<br> /subscriptions/sub/resourceGroups/functionsrg/providers/Microsoft.Web/sites/AppName/host/default/functionKeys/hostkey1br><br>
+For example, the URI format for a host key is:<br> /subscriptions/sub/resourceGroups/functionsrg/providers/Microsoft.Web/sites/AppName/host/default/functionKeys/hostkey1
+<br><br>
 So you would have:<br>
 "name": "AppName/default/hostkey1",
 "type": "Microsoft.Web/sites/host/functionkeys"
@@ -16,7 +17,7 @@ So you would have:<br>
 And the URI format for a function key is:<br> /subscriptions/sub/resourceGroups/functionsrg/providers/Microsoft.Web/sites/AppName/functions/FunctionName/keys/funkey1<br><br>
 So you would have:<br>
 "name": "AppName/FunctionName/funkey1",
-"type": "Microsoft.Web/sites/functions/keys,
+"type": "Microsoft.Web/sites/functions/keys"
 
  
 
