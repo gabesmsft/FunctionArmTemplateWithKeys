@@ -1,5 +1,5 @@
 This is a starter sample for using ARM template to create/update Azure Functions Host keys and Function keys.<br><br>
-If you do decide to create a Function key, you will ned to ensure that the Function exists before you create the key, otherwise the template deployment will fail due to the Function not being found.<br><br>
+If you do decide to create a Function key, you will need to ensure that the Function exists before you create the key, otherwise the template deployment will fail due to the Function not being found.<br><br>
 Also, I made the Function key section deploy after the Host key section via dependsOn, to avoid potential conflicts with creating two keys at the same time on the same Function App.<br><br>
 Functions host & function keys are each multi-level child ARM resources.<br><br>
 The format of an ARM URI when there are multiple child resource levels is:<br>
