@@ -2,7 +2,7 @@
     "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "parameters": {
-      "sfresourceid": {
+      "planName": {
         "type": "string"
       },
       "appName": {
@@ -32,10 +32,10 @@
       {
         "type": "Microsoft.Web/serverfarms",
         "apiVersion": "2018-02-01",
-        "name": "[parameters('sfresourceid')]",
+        "name": "[parameters('planName')]",
         "location": "[resourceGroup().location]",
         "properties": {
-          "name": "[parameters('sfresourceid')]",
+          "name": "[parameters('planName')]",
           "computeMode": "Dynamic"
         },
         "sku": {
@@ -53,12 +53,12 @@
         "name": "[parameters('appName')]",
         "location": "[resourceGroup().location]",
         "kind": "functionapp",
-        "dependsOn": [ "[resourceId('Microsoft.Web/serverfarms', parameters('sfresourceid'))]" ],
+        "dependsOn": [ "[resourceId('Microsoft.Web/serverfarms', parameters('planName'))]" ],
         //"identity": {
         //  "type": "SystemAssigned"
         //},
         "properties": {
-          "serverFarmId": "[parameters('sfresourceid')]",
+          "serverFarmId": "[parameters('planName')]",
           "httpsOnly": true,
           "siteConfig": {
             "use32BitWorkerProcess": false
