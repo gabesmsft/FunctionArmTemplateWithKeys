@@ -130,5 +130,15 @@
         "kind": "StorageV2",
         "properties": {}
       }
-    ]
+    ],
+	"outputs": {
+    "functionHostAllKeys": {
+      "type": "object",
+      "value": "[listkeys(resourceId('Microsoft.Web/sites/host', parameters('appName'), 'default'), '2018-02-01')]"
+    },
+    "functionHostSingleKey": {
+      "type": "string",
+      "value": "[listkeys(resourceId('Microsoft.Web/sites/host', parameters('appName'), 'default'), '2018-02-01').masterKey]"
+    }
+  }
 }
